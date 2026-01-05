@@ -1,4 +1,4 @@
-import { Plus, MoreVertical, Trash2, Search, MessageCircleMore, SquarePen, TicketMinus, TicketPlus, RectangleGoggles, RectangleVertical, HdmiPort} from "lucide-react";
+import { Plus, MoreVertical, Trash2, Search, MessageCircleMore, SquarePen} from "lucide-react";
 import { useState } from "react";
 type Chat = {
   id: number;
@@ -25,18 +25,21 @@ function Sidebar(){
       
         <hr className="border-gray-200 my-2 " />
 
-        <div className="flex items-center gap-3 mb-6">
+        <div className={`flex mb-6 gap-2
+          ${isOpen ? "flex-row items-center" : "flex-col items-center"}`}>
       
-      <button className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white text-xs font-medium px-4 py-2 rounded-lg">
+      <button className="flex items-center justifiy-center gap-2 bg-green-500 hover:bg-green-600 text-white text-xs font-bold px-4 py-2 rounded-lg">
         <Plus className="w-4 h-4" />
         
-       {isOpen && "NEW CHAT"}
+       {isOpen && <span>NEW CHAT</span>}
       </button>
-     {isOpen && (
-      <button className="flex items-center justify-center w-9 h-9 bg-black hover:bg-gray-800 text-white rounded-full">
-        <Search className="w-4 h-4" />
+     
+      <button className={`flex  items-center justify-center bg-gray-800 hover:bg-gray-700
+       text-white transition-all w-12 h-8
+        ${isOpen ? "rounded-full" : "rounded-lg"}`}>
+       <Search className="w-4 h-4 " />
       </button>
-     )}
+     
     </div>
      {isOpen && (
       <div className="flex-1 space-y-2  font-bold overflow-y-auto">
@@ -45,7 +48,7 @@ function Sidebar(){
             key={chat.id}
             className="relative group flex items-center justify-between px-2 py-2 rounded-lg hover:bg-gray-100"
           >
-            <div className="flex items-center gap-2 text-sm text-gray-700">
+            <div className="flex items-center gap-2 text-sm text-black">
               <MessageCircleMore className="w-4 h-4" />
               {chat.title}
             </div>
@@ -80,8 +83,8 @@ function Sidebar(){
     )}
         <button    
           onClick={() => setIsOpen(!isOpen)}
-        className="absolute top-1/2 -right-3 transform -translate-y-1/2
-        bg-green-500 w-6 h-16 rounded-r-xl flex items-center justify-center
+        className="absolute top-1/2 -right-1 transform -translate-y-1/2
+        bg-green-500 w-3 h-16 rounded-l-xl  flex items-center justify-center
         hover:bg-green-600 transition"
       >
         </button>
