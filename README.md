@@ -66,27 +66,4 @@ L’application sera disponible sur :
 - Réponse automatique de l’IA (simulation front-end)
 - Design responsive
 
-## Auteur
-
-**Nom :**  Elabyad ilham
-
- **Statut :** Candidat pour un stage Frontend
-
- **Spécialité :** Développement Frontend
-
- **Technologies :** React • TypeScript • Tailwind CSS
-
-## Contexte
-
-Ce projet a été réalisé dans le cadre d’un **test technique de recrutement pour un stage Frontend**.
-Il vise à démontrer :
-
-la compréhension de React
-
-la structuration d’un projet
-
-la gestion de l’état
-
-et le sens du design UI
-
 
